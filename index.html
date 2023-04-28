@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9293cada29.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rock Paper Scissor</title>
+  </head>
+  <body>
+    <section id="root">
+      <h1 class="root-label">Rock Paper Scissor</h1>
+      <section id="select-mode">
+        <h1>Select Mode</h1>
+        <button id="pvpBtn">Player Vs Player</button>
+        <button id="pvcBtn">Player Vs Computer</button>
+      </section>
+      <section id="pvp">
+        <div class="player1">
+          <h1>Player 1</h1>
+          <div class="btn-ctn">
+            <button class="rock" id="p1Btn" data-value="rock">
+              <i class="fa-solid fa-hand-back-fist"></i>
+            </button>
+            <button class="paper" id="p1Btn" data-value="paper">
+              <i class="fa-solid fa-hand"></i>
+            </button>
+            <button class="scissor" id="p1Btn" data-value="scissor">
+              <i class="fa-solid fa-hand-scissors fa-rotate-90"></i>
+            </button>
+          </div>
+        </div>
+        <div class="scoreboard">
+          <p class="legend">
+            Best of 5 <br /><span id="turn">Player 1 Turn</span>
+          </p>
+          <div class="score">
+            <p class="display-score" id="p1-score">0</p>
+            <p>Player 1</p>
+          </div>
+          <div class="score">
+            <p class="display-score" id="p2-score">0</p>
+            <p>Player 2</p>
+          </div>
+        </div>
+        <div class="player2">
+          <h1 id="change-name">Player 2</h1>
+          <div class="btn-ctn">
+            <button class="rock" id="p2Btn" data-value="rock">
+              <i class="fa-solid fa-hand-back-fist"></i>
+            </button>
+            <button class="paper" id="p2Btn" data-value="paper">
+              <i class="fa-solid fa-hand"></i>
+            </button>
+            <button class="scissor" id="p2Btn" data-value="scissor">
+              <i class="fa-solid fa-hand-scissors fa-rotate-90"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="modal">
+        <section class="modalContent">
+          <h1 id="winner">Player 1 Win</h1>
+          <button id="play-again">Play again</button>
+          <button id="return">Return to Select mode</button>
+        </section>
+      </section>
+      <footer>
+        Copyright @
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        bigsizeJ<i class="fa-brands fa-github"></i>
+      </footer>
+    </section>
+  </body>
+</html>

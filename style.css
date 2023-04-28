@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fontColor: rgb(190, 188, 188);
+  --primaryColro: #2b2f39;
+  --secondaryColor: #323741;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--primaryColro);
+  color: var(--fontColor);
+}
+
+.root-label {
+  position: absolute;
+  inset: 50px 0 0 0;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  font-size: 3rem;
+  text-shadow: 0px 0px 5px whitesmoke;
+}
+
+#select-mode {
+  width: fit-content;
+  background-color: var(--secondaryColor);
+  padding: 25px 20px;
+  box-shadow: 0px 5px 15px 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 20px;
+  transition: 500ms ease-in-out;
+  animation-name: selectAnimation;
+  animation-duration: 1s;
+}
+
+#pvp {
+  top: 180px;
+  width: 70%;
+  height: fit-content;
+  position: absolute;
+  margin-right: 1000px;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+#pvp .player1,
+.player2,
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+#pvp .scoreboard {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#pvp .score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#pvp .display-score {
+  font-size: 3rem;
+}
+
+#pvp p {
+  font-size: 1.3rem;
+}
+
+#pvp .legend {
+  text-align: center;
+  font-size: 2rem;
+  grid-column: span 2;
+  letter-spacing: 2px;
+}
+
+#pvp .legend span {
+  font-size: 1rem;
+}
+
+#pvp h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+#pvp .btn-ctn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  row-gap: 10px;
+  column-gap: 30px;
+}
+
+#pvp button {
+  outline: none;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 10px;
+  width: 7rem;
+  aspect-ratio: 1/1;
+  color: var(--fontColor);
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+#pvp button:disabled {
+  color: rgba(0, 0, 0.5);
+  border: none;
+}
+#pvp button:disabled:hover {
+  box-shadow: none;
+  cursor: default;
+}
+
+#pvp .rock {
+  grid-column: span 2;
+  border: 5px solid blue;
+}
+
+#pvp .rock:active {
+  box-shadow: 0px 0px 10px 5px blue;
+}
+
+#pvp .paper {
+  border: 5px solid yellow;
+}
+
+#pvp .paper:active {
+  box-shadow: 0px 0px 10px 5px yellow;
+}
+
+#pvp .scissor {
+  border: 5px solid red;
+}
+
+#pvp .scissor:active {
+  box-shadow: 0px 0px 10px 5px red;
+}
+
+@keyframes selectAnimation {
+  0% {
+    margin-left: 1000px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+#select-mode h1 {
+  text-align: center;
+  font-size: 2rem;
+  grid-column: span 2;
+}
+
+#select-mode button,
+.modalContent button {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  color: var(--fontColor);
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: 200ms ease-in-out;
+}
+
+#select-mode button:hover {
+  background-color: #3d424b;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal .modalContent {
+  background-color: var(--secondaryColor);
+  box-shadow: 0px 5px 15px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  z-index: 5;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.modalContent h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  grid-column: span 2;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+footer .fa-github {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
